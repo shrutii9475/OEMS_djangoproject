@@ -1,0 +1,146 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <!-- <link rel="stylesheet" href="register.css"> -->
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+
+    <style>
+        ul {
+          list-style: none;
+        }
+    
+        .all-btns {
+          width: 15rem;
+        }
+    
+        .OEMS {
+          text-decoration: underline;
+          text-underline-offset: 0.8rem;
+          text-decoration-thickness: 0.15rem;
+        }
+    
+        /* Internal CSS for the navigation bar */
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+        }
+    
+        .nav-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: space-between;
+          background-color: #333;
+          padding: 10px;
+        }
+    
+        .nav-list li {
+          margin: 0 10px;
+        }
+    
+        .nav-list a {
+          text-decoration: none;
+          color: #fff;
+          padding: 8px 16px;
+          border-radius: 5px;
+        }
+    
+        .nav-list a:hover {
+          background-color: #555;
+        }
+      </style>
+
+
+</head>
+<body>
+
+    <nav>
+        <ul class="nav-list">
+          <li><a href="/index">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Services</a></li>
+          <!-- <li><a href="/index">Log in</a></li> -->
+        </ul>
+    </nav>
+    
+    <div class="container" >
+        
+    <form class="form" method="post" action="{% url 'register' %}" onsubmit="return validateForm()">
+      {% csrf_token %}
+        <p class="title">Register </p>
+        <p class="message">Signup now and get full access to our app. </p>
+      
+        <!-- <label>
+            <input required="" placeholder="" name= "fullname" type="text" class="input">
+            <span>FullName</span>
+        </label> -->
+
+        <div class="flex">
+          <label>
+            <input required="" placeholder="" name="firstname" type="text" class="input">
+            <span>First Name</span>
+        </label>
+        
+        <label>
+            <input required="" placeholder="" name="lastname" type="text" class="input">
+            <span>Last Name</span>
+        </label>
+        </div>
+
+        <label>
+          <input required="" placeholder="" name="username" type="text" class="input">
+          <span>Username</span>
+      </label>
+                
+        <label>
+            <input required="" placeholder="" name="email" type="email" class="input">
+            <span>Email</span>
+        </label> 
+          
+        <label>
+          <input required="" placeholder="" type="password" name="password" id="password" class="input">
+          <span>Password</span>
+      </label>
+
+      <label>
+          <input required="" placeholder="" type="password" name="confirm_password" id="confirmPassword" class="input">
+          <span>Confirm password</span>
+          <span id="passwordMismatch" style="color: red; display: none;">Passwords do not match</span>
+      </label>
+
+        <!-- <label>
+            <input required="" placeholder="" name="password" type="password" class="input">
+            <span>Password</span>
+        </label>
+        <label>
+            <input required="" placeholder="" type="password" class="input">
+            <span>Confirm password</span> 
+        </label> -->
+        <button class="submit">Submit</button>
+        <p class="signin">Already have an acount ? <a href="/login">SignIn</a> </p>
+    </form>
+
+    <script>
+      function validateForm() {
+          var password = document.getElementById("password").value;
+          var confirmPassword = document.getElementById("confirmPassword").value;
+  
+          if (password !== confirmPassword) {
+              document.getElementById("passwordMismatch").style.display = "block";
+              return false;
+          } else {
+              document.getElementById("passwordMismatch").style.display = "none";
+              return true;
+          }
+      }
+  </script>
+</div>
+</body>
+</html>

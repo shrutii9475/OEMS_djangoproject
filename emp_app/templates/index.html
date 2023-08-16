@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Office Employee Management System Main</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      /* ul {
+        list-style: none;
+      } */
+  
+      .all-btns {
+        width: 15rem;
+      }
+  
+      .OEMS {
+        text-decoration: underline;
+        text-underline-offset: 0.8rem;
+        text-decoration-thickness: 0.15rem;
+      }
+  
+      /* Internal CSS for the navigation bar */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+  
+      nav {
+        background-color: #333;
+        padding: 10px;
+      }
+  
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+      }
+  
+      li {
+        margin: 0 10px;
+      }
+  
+      a {
+        text-decoration: none;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 5px;
+      }
+  
+      a:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  
+  <body>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show my-2"  role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <!-- <section class="container"> -->
+    <!-- <header> -->
+      <nav>
+        <!-- <a href="/index">Home</a>
+        <a href="#">Contact</a>
+        <a href="#">Services</a>
+        <a href="/login">Login</a> -->
+        <ul>
+          <li><a href="index">Index</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
+        </ul>
+      </nav>
+    <!-- </header> -->
+
+    <section class="container">
+    <h1 class="text-center my-4 OEMS">Office Employee Management System Index Page</h1>
+    <hr>
+      <!-- <a href="/home" class="btn btn-primary all-btns my-2">go to home page</a> -->
+
+    </section>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+<!-- django concepts
+
+1. CRUD operations create, read, update, delete
+2. Token or Tokenisation (JWT TOKENS/ HEADER, PAYLOAD, SIGNATURE) encrypt/decrypt
+3. Autentication or Authorization (email/ phone varification, otp/token) (OAuth 2 Authentication/ SAML/ SSO)
+4. Use of STATIC files (imp.)
+5. Integrate Payment Gateway
+6. Integrate Celery
+7. Deploy your application
+
+-->
